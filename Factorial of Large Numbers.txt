@@ -1,0 +1,50 @@
+Ques .  Given an integer, the task is to find factorial of the number.
+ 
+Input:
+The first line of input contains an integer T denoting the number of test cases.  
+The first line of each test case is N,the number whose factorial is to be found
+ 
+Output:
+Print the factorial of the number in separate line.
+ 
+Constraints:
+1 ≤ T ≤ 100
+1 ≤ N ≤ 1000
+ 
+Example:
+Input
+3
+5
+10
+2
+ 
+Output
+120
+3628800
+2
+
+SOLUTION  :
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.math.*;
+
+class GFG {
+	public static void main (String[] args) {
+		//code
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while(t>0)
+		{
+		    int num = sc.nextInt();
+		    BigInteger bigInteger = new BigInteger("1");   
+            for (int i = 2; i <=num ; i++){  
+            //returns a BigInteger by computing ?this *val ? value.  
+                bigInteger = bigInteger.multiply(BigInteger.valueOf(i));  
+            }  
+            System.out.println(bigInteger);
+		    t--;
+		}
+	}
+}
