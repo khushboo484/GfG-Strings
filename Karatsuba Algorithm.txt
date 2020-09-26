@@ -1,0 +1,58 @@
+Ques .  Given two binary strings that represent value of two integers, find the product of two strings. For example, if the first bit string is “1100” and second bit string is “1010”, output should be 120.
+
+Input:
+First line consists of T test cases. Only line of every test case consists of 2 binary strings.
+
+Output:
+Single line output, print the multiplied value.
+
+Constraints:
+1<=T<=100
+1<=Length of string<=100
+
+Example:
+Input:
+2
+1100 01
+01 01
+Output:
+12
+1
+
+SOLUTION :
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		//code
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while(t>0)
+		{
+		    String s1 = sc.next();
+		    String s2 = sc.next();
+		    int j = 0;
+		    double sum = 0,num1,num2;
+		    for(int i=s1.length()-1;i>=0;i--)
+		    {
+		        sum = sum + (Character.getNumericValue(s1.charAt(i)) * Math.pow(2,j));
+		        j++;
+		    }
+		    num1 = sum;
+		    sum = 0;
+		    j = 0;
+		    for(int i=s2.length()-1;i>=0;i--)
+		    {
+		        sum = sum + (Character.getNumericValue(s2.charAt(i)) * Math.pow(2,j));
+		        j++;
+		    }
+		    num2 = sum;
+		    String rounded = String.format("%.0f", num1*num2);
+		    System.out.println(rounded);
+		    t--;
+		}
+	}
+}
